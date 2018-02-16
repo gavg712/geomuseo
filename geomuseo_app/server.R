@@ -1,26 +1,30 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-
-# Define server logic required to draw a histogram
-shinyServer(function(input, output) {
-   
-  output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
+library(tidyverse)
+library(DT)
+function(input, output, session) {
+  output$plot <- renderPlot({
+    p <- ggplot(cars, aes(speed, dist))
+    if (input$plotType == "p"){
+      p + geom_point()
+    } else if (input$plotType == "l") {
+      p + geom_line()
+    } else {
+      p
+    }
   })
   
-})
+  output$summary <- renderPrint({
+    summary(cars)
+  })
+  
+  output$table <- DT::renderDataTable({
+    data <- read_csv("www/ficha.csv") %>%
+      mutate(FOTO = paste0("<a href='",file.path("fotos", FOTO),
+                           "' target='_blank'><img src='",
+                           file.path("fotos", FOTO),
+                           "' style='width:100px'> </a>"
+      ),
+             FECHA = dmy(FECHA))
+    DT::datatable(data, escape = F)
+  })
+}
+

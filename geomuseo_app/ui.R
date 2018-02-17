@@ -3,8 +3,8 @@ library(shinythemes)
 library(markdown)
 library(ggplot2)
 
-navbarPage("Navbar!", theme = "css/style.css",
-           tabPanel("Plot",
+navbarPage("IKIAM", theme = "css/style.css",
+           tabPanel("Introducción",
                     sidebarLayout(
                       sidebarPanel(
                         radioButtons("plotType", "Plot type",
@@ -16,14 +16,13 @@ navbarPage("Navbar!", theme = "css/style.css",
                       )
                     )
            ),
-           tabPanel("Summary",
+           tabPanel("Mapa",
                     verbatimTextOutput("summary")
            ),
-           navbarMenu("More",
-                      tabPanel("Table",
-                               DT::dataTableOutput("table")
-                      ),
-                      tabPanel("About",
+           tabPanel("Fichas",
+                    DT::dataTableOutput("table")
+           ),
+           tabPanel("About",
                                fluidRow(
                                  column(6,
                                         includeMarkdown("about.md")
@@ -44,5 +43,4 @@ navbarPage("Navbar!", theme = "css/style.css",
                                )
                       )
            )
-)
 

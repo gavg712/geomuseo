@@ -1,8 +1,8 @@
 library("tidyverse")
 library("DBI")
 library("DT")
-
-dir_fichas <- list.files(path = 'archivos/',
+#Inputitng data and generating table for server
+dir_fichas <- list.files(path = 'www/',
                          pattern = '*.csv',
                          full.names = T,
                          recursive = T,
@@ -22,17 +22,11 @@ all_fichas <- lapply(dir_fichas,
                                   "formacion",
                                   "responsable")) %>% bind_rows()
 serv_input <- all_fichas %>%
-  mutate(dir_img = paste(dirname(dir_fichas),
-                                         "fotos",
-                                         foto,
-                                         sep = "/")) %>%
-  mutate(Imagen = dbQuoteString(ANSI(),
-                                paste("<img src=",
-                                      "\"",
-                                      dir_img,
-                                      "\"",
-                                      " height=\"75\"></img>",
-                                      sep = ""))) %>%
+  #In this code line you can change the image resolution; default 100px
+  mutate(Imagen = paste0("<a href='",file.path("fotos", foto),
+                                        "' target='_blank'><img src='",
+                                        file.path("fotos", foto),
+                                        "' style='width:100px'> </a>")) %>%
   select(Imagen, nombre, codigo, muestra,
          formacion, descripcion, responsable, fecha) %>%
   rename(Muestra = nombre,
@@ -42,8 +36,5 @@ serv_input <- all_fichas %>%
          Formación = formacion,
          Descripción = descripcion,
          Responsable = responsable,
-         Fecha = fecha) %>%
-  bind_rows(data.frame(Imagen = "www/archivos/fotos/RS-001.jpg"))
+         Fecha = fecha)
 
-  '<img src="test.png" height="52"></img>'
-  "www/img/img1.png"

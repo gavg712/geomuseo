@@ -17,14 +17,7 @@ function(input, output, session) {
   })
   
   output$table <- DT::renderDataTable({
-    data <- read_csv("www/ficha.csv") %>%
-      mutate(FOTO = paste0("<a href='",file.path("fotos", FOTO),
-                           "' target='_blank'><img src='",
-                           file.path("fotos", FOTO),
-                           "' style='width:100px'> </a>"
-      ),
-             FECHA = dmy(FECHA))
-    DT::datatable(data, escape = F)
+    DT::datatable(serv_input, escape = F)
   })
 }
 

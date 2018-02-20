@@ -19,5 +19,9 @@ function(input, output, session) {
   output$table <- DT::renderDataTable({
     DT::datatable(serv_input, escape = F)
   })
+  
+  output$map <- renderLeaflet({
+    sampling_map
+  })
 }
 

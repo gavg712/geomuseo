@@ -3,26 +3,25 @@ library(shinythemes)
 library(markdown)
 library(ggplot2)
 
-navbarPage("IKIAM", theme = "css/style.css",
+navbarPage("GEOMUSEO", theme = "css/style.css",
            tabPanel("Introducción",
-                    sidebarLayout(
-                      sidebarPanel(
-                        radioButtons("plotType", "Plot type",
-                                     c("Scatter"="p", "Line"="l")
-                        )
-                      ),
-                      mainPanel(
-                        plotOutput("plot")
-                      )
+                    fluidRow(
+                      column(12,
+                             includeMarkdown("Intro.Rmd")
+                      )#,
+                      #column(2,
+                      #       img(class="img-polaroid",
+                      #           src = "Ikiam.png",
+                      #           width = 100))
                     )
-           ),
-           tabPanel("Mapa",
-                    verbatimTextOutput("summary")
            ),
            tabPanel("Fichas",
                     DT::dataTableOutput("table")
            ),
-           tabPanel("About",
+           tabPanel("Mapa",
+                    leafletOutput("map", width="100%", height="100%")
+           ),
+           tabPanel("Muestras",
                                fluidRow(
                                  column(6,
                                         includeMarkdown("about.md")

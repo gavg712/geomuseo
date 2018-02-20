@@ -1,6 +1,8 @@
 library("tidyverse")
 library("DBI")
 library("DT")
+library("leaflet")
+library("RColorBrewer")
 #Inputitng data and generating table for server
 dir_fichas <- list.files(path = 'www/',
                          pattern = '*.csv',
@@ -22,7 +24,7 @@ all_fichas <- lapply(dir_fichas,
                                   "formacion",
                                   "responsable")) %>% bind_rows()
 serv_input <- all_fichas %>%
-  #In this code line you can change the image resolution; default 100px
+  #In this code line you can change the image resolution; (default 100px)
   mutate(Imagen = paste0("<a href='",file.path("fotos", foto),
                                         "' target='_blank'><img src='",
                                         file.path("fotos", foto),
@@ -36,5 +38,16 @@ serv_input <- all_fichas %>%
          Formación = formacion,
          Descripción = descripcion,
          Responsable = responsable,
-         Fecha = fecha)
+         Fecha = fecha) %>%
+  arrange(Muestra)
+
+#Generating the interactive map
+sampling_map <- leaflet() %>%
+  addTiles(
+    urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png",
+    attribution = 'Maps by <a href="http://www.mapbox.com/">Mapbox</a>'
+  ) %>%
+  setView(-0.98, -77.81, zoom = 10)
+
+
 

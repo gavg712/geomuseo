@@ -1,0 +1,19 @@
+---
+title: "Intro"
+author: "Stalin Guamán"
+date: "19 de febrero de 2018"
+output: html_document
+---
+
+
+<img style="float: left" src="Ikiam.png" width="120px" />    <img style="float: right"  src="Logo.jpg" width="150px" />
+
+-----------
+
+
+
+
+-----------
+
+# AQUÍ VA UNA INTRODUCCIÓN
+### Acerca del proyecto

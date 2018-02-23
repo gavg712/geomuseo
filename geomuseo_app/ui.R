@@ -16,7 +16,14 @@ navbarPage("GEOMUSEO", theme = "css/style.css",
                     )
            ),
            tabPanel("Fichas",
-                    DT::dataTableOutput("table")
+                    fluidRow(column(width=3,
+                                    selectInput("tipo", label =  "Tipo",
+                                                choices = c("Roca",
+                                                          "A",
+                                                          "B",
+                                                          "C"),
+                                                selected = "A"))),
+                    fluidRow(DT::dataTableOutput("table"))
            ),
            tabPanel("Mapa",
                     leafletOutput("map", width="100%", height="100%")

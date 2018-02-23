@@ -16,4 +16,5 @@ output: html_document
 -----------
 
 # AQUÍ VA UNA INTRODUCCIÓN
+
 ### Acerca del proyecto

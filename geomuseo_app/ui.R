@@ -2,6 +2,7 @@ library(shiny)
 library(shinythemes)
 library(markdown)
 library(ggplot2)
+library(leaflet)
 
 navbarPage("GEOMUSEO", theme = "css/style.css",
            tabPanel("Introducción",
@@ -15,7 +16,7 @@ navbarPage("GEOMUSEO", theme = "css/style.css",
                       #           width = 100))
                     )
            ),
-           tabPanel("Fichas",
+           tabPanel(title = "Fichas",
                     fluidRow(column(width=3,
                                     selectInput("tipo", label =  "Tipo",
                                                 choices = c("Roca",
@@ -23,10 +24,13 @@ navbarPage("GEOMUSEO", theme = "css/style.css",
                                                           "B",
                                                           "C"),
                                                 selected = "A"))),
-                    fluidRow(DT::dataTableOutput("table"))
+                    fluidRow(column(width=6,
+                                    DT::dataTableOutput("table")),
+                             column(width=6,
+                                    leafletOutput("map",  height=400)))
            ),
-           tabPanel("Mapa",
-                    leafletOutput("map", width="100%", height="100%")
+           tabPanel("Mapa"#,
+                    #leafletOutput("map", width="100%", height=400)
            ),
            tabPanel("Muestras",
                                fluidRow(

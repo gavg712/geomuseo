@@ -13,14 +13,17 @@ function(input, output, session) {
     }
   })
   
-  output$summary <- renderPrint({
-    summary(cars)
+  serv_input <- reactive({
+    all_fichas %>%
+      mutate(Imagen = paste0("<img src='", file.path("fotos", foto),"' style='width:80px'>"),
+             Imagen2 = paste0("<img src='", file.path("fotos", foto),"' style='width: 100%'>")) %>%
+      filter(muestra == input$tipo)
+    
   })
   
   output$table <- DT::renderDataTable(
-    serv_input %>%
+    serv_input() %>%
       select(Imagen, Muestra = nombre, Código = codigo, Tipo = muestra) %>%
-      filter(Tipo == input$tipo) %>%
       arrange(Muestra) %>%
     DT::datatable(escape = F, 
                   selection = "single", 
@@ -31,11 +34,11 @@ function(input, output, session) {
   observeEvent(input$table_rows_selected,
                {
                  showModal(modalDialog(
-                   title = paste("Muestra:", serv_input$nombre[input$table_rows_selected],
-                                 "Código:", serv_input$codigo[input$table_rows_selected]),
+                   title = paste("Muestra:", serv_input()$nombre[input$table_rows_selected],
+                                 "Código:", serv_input()$codigo[input$table_rows_selected]),
                    div(helpText("Un marcador ha sido agregado en el mapa,
                                 puede consultar más información haciendo clic sobre él"), 
-                       HTML(serv_input$Imagen2[input$table_rows_selected])),
+                       HTML(serv_input()$Imagen2[input$table_rows_selected])),
                    easyClose = TRUE,
                    footer = modalButton("Cerrar"), 
                    size = "m"
@@ -43,7 +46,7 @@ function(input, output, session) {
                })
   
   output$map <- renderLeaflet({
-    splayer <- all_fichas
+    splayer <- serv_input() %>% as.data.frame()
     coordinates(splayer) <- ~x+y
     proj4string(splayer) <- CRS("+init=epsg:32718")
     splayer <- spTransform(splayer, CRS("+init=epsg:4326"))
@@ -87,14 +90,6 @@ function(input, output, session) {
       ) %>%
       addScaleBar()
     m
-  })
-  
-  # print the selected indices
-  output$selectedRows = renderPrint({
-    s = input$table_rows_selected
-    if (length(s)) {
-      cat('A marker is showed on the map for selected samples:\n\n')
-    }
   })
 }
 

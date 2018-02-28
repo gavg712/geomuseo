@@ -1,6 +1,21 @@
-### Speed and Stopping Distances of Cars
+### GEOMUSEO 
 
-The data give the speed of cars and the distances taken to stop. Note that the data were recorded in the 1920s.
+Versión 0.1
 
-* **Speed** - speed (mph)
-* **Dist** - stopping distance (ft)
+Esta aplicación fue desarrollada completamente en R usando las librerías de Shiny, Leaflet y DT.
+
+#### Autores:
+
+* Stalin _"Chupin"_ Guamán
+* Gabriel Gaona
+
+#### Dirección general:
+
+* Glenda Loayza
+
+#### Colaboradores:
+
+* Jeferson Cargua
+* Anderson Guaman
+* Cristofer Paredes
+* Diana Quilumba

@@ -27,24 +27,13 @@ all_fichas <- lapply(dir_fichas,
                                   "responsable")) %>% bind_rows()
 serv_input <- all_fichas %>%
   #In this code line you can change the image resolution; (default 100px)
-  mutate(Imagen = paste0("<a href='",file.path("fotos", foto),
-                                        "' target='_blank'><img src='",
-                                        file.path("fotos", foto),
-                                        "' style='width:80px'> </a>")) %>%
-  select(Imagen, nombre, codigo, muestra
-         ) %>% #formacion, descripcion, responsable, fecha
-  rename(Muestra = nombre,
-         Imagen = Imagen,
-         Código = codigo,
-         Tipo = muestra#,
-         # Formación = formacion,
-         # Descripción = descripcion,
-         # Responsable = responsable,
-         # Fecha = fecha
-         ) %>%
-  arrange(Muestra)
+  mutate(Imagen = paste0("<img src='",
+                         file.path("fotos", foto),
+                         "' style='width:80px'>"), 
+         Imagen2 = paste0("<img src='",
+                         file.path("fotos", foto),
+                         "' style='width: 100%'>"))
 
-#Generating the interactive map
-
+#Generating the interactive choices
 
 

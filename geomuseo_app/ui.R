@@ -4,53 +4,41 @@ library(markdown)
 library(ggplot2)
 library(leaflet)
 
-navbarPage("GEOMUSEO", theme = "css/style.css",
-           tabPanel("Introducción",
+navbarPage("GEOMUSEO", 
+           theme = "css/style.css",
+           selected = "Muestras", 
+           tabPanel("Inicio",
                     fluidRow(
                       column(12,
                              includeMarkdown("Intro.Rmd")
-                      )#,
-                      #column(2,
-                      #       img(class="img-polaroid",
-                      #           src = "Ikiam.png",
-                      #           width = 100))
+                      )
                     )
            ),
-           tabPanel(title = "Fichas",
-                    fluidRow(column(width=3,
-                                    selectInput("tipo", label =  "Tipo",
-                                                choices = c("Roca",
-                                                          "A",
-                                                          "B",
-                                                          "C"),
-                                                selected = "A"))),
+           tabPanel(title = "Muestras",
+                    fluidRow(class = "well",
+                        column(width=3,
+                               selectInput("tipo", label =  "Tipo",
+                                           choices =  unique(serv_input$muestra)),
+                                           selected = character())
+                    ),
                     fluidRow(column(width=6,
                                     DT::dataTableOutput("table")),
                              column(width=6,
-                                    leafletOutput("map",  height=400)))
+                                    leafletOutput("map",  height=400)
+                                    )
+                    )
            ),
-           tabPanel("Mapa"#,
-                    #leafletOutput("map", width="100%", height=400)
-           ),
-           tabPanel("Muestras",
-                               fluidRow(
-                                 column(6,
-                                        includeMarkdown("about.md")
-                                 ),
-                                 column(3,
-                                        img(class="img-polaroid",
-                                            src=paste0("http://upload.wikimedia.org/",
-                                                       "wikipedia/commons/9/92/",
-                                                       "1919_Ford_Model_T_Highboy_Coupe.jpg")),
-                                        tags$small(
-                                          "Source: Photographed at the Bay State Antique ",
-                                          "Automobile Club's July 10, 2005 show at the ",
-                                          "Endicott Estate in Dedham, MA by ",
-                                          a(href="http://commons.wikimedia.org/wiki/User:Sfoskett",
-                                            "User:Sfoskett")
-                                        )
-                                 )
-                               )
+           tabPanel("Acerca de",
+                    fluidRow(
+                      column(6,
+                             includeMarkdown("about.md")
+                      ),
+                      column(3,
+                             img(class="img-polaroid",
+                                 src="Ikiam.png",
+                                 style = "width: 50%")
                       )
+                    )
            )
+)
 

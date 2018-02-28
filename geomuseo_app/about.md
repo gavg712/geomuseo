@@ -6,8 +6,8 @@ Esta aplicación fue desarrollada completamente en R usando las librerías de Sh
 
 #### Autores:
 
-* Stalin _"Chupin"_ Guamán
-* Gabriel Gaona
+* Stalin Guamán
+* Gabriel Gaona (_"Chupin Mayor"_)
 
 #### Dirección general:
 

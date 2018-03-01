@@ -5,7 +5,7 @@ library(ggplot2)
 library(leaflet)
 
 navbarPage("GEOMUSEO",
-           selected = "Muestras", 
+           selected = "Inicio", 
            tabPanel("Inicio",
                     source("www/home.R")
            ),

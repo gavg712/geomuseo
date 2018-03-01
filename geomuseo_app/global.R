@@ -25,15 +25,14 @@ all_fichas <- lapply(dir_fichas,
                                   "descripcion",
                                   "formacion",
                                   "responsable")) %>% bind_rows()
-# serv_input <- all_fichas %>%
-#   #In this code line you can change the image resolution; (default 100px)
-#   mutate(Imagen = paste0("<img src='",
-#                          file.path("fotos", foto),
-#                          "' style='width:80px'>"), 
-#          Imagen2 = paste0("<img src='",
-#                          file.path("fotos", foto),
-#                          "' style='width: 100%'>")) %>%
-#   filter(muestra == input$tipo)
+serv_input <- all_fichas %>%
+  #In this code line you can change the image resolution; (default 100px)
+  mutate(Imagen = paste0("<img src='",
+                         file.path("fotos", foto),
+                         "' style='width:80px'>"),
+         Imagen2 = paste0("<img src='",
+                         file.path("fotos", foto),
+                         "' style='width: 100%'>")) #%>% filter(muestra == input$tipo)
 
 #Generating the interactive choices
 

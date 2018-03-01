@@ -1,9 +1,9 @@
 fluidPage(
   tags$head(
-    tags$meta( charset="utf-8"),
-    tags$meta( name="viewport", content="width=device-width, initial-scale=1.0"),
-    tags$meta( name="description", content=""),
-    tags$meta( name="Gabriel Gaona", content=""),
+    #tags$meta( charset="utf-8"),
+    tags$meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+    tags$meta(name="description", content=""),
+    tags$meta(name="Gabriel Gaona", content=""),
     tags$title("Geomuseo versión 0.1"),
     tags$link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css"),
     tags$link(href="css/nivo-lightbox.css", rel="stylesheet"),
@@ -31,8 +31,6 @@ fluidPage(
                          
                 )
             ),
-            
-            
             tags$section( id="intro", class="intro", 
                           div(class="slogan",
                               h1(color="white", "Geomuseo"),
@@ -291,7 +289,5 @@ fluidPage(
     tags$script(src="js/nivo-lightbox.min.js"),
     tags$script(src="js/stellar.js"),
     tags$script(src="js/custom.js")
-    
   )
-  
 )

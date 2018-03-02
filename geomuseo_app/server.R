@@ -72,8 +72,9 @@ function(input, output, session) {
       filtered = input$table_rows_all
       
       m <- leaflet() %>%
-        addProviderTiles(providers$OpenStreetMap, group = "OSM:Base") %>%
-        addProviderTiles(providers$Esri.WorldImagery , group = "ESRI:Satallite")
+        addProviderTiles(providers$Stamen.Terrain, group = "Stamen: Terrain") %>%
+        addProviderTiles(providers$OpenStreetMap, group = "OSM: Base") %>%
+        addProviderTiles(providers$Esri.WorldImagery , group = "ESRI: Satellite")
       
       if(length(filtered)){
         m <- m %>% 
@@ -97,7 +98,7 @@ function(input, output, session) {
       m <- m  %>%
         #setView(-77.81, -0.98, zoom = 10) %>%
         addLayersControl(
-          baseGroups = c("OSM:Base","ESRI:Satallite"),
+          baseGroups = c("Stamen: Terrain", "OSM: Base","ESRI: Satellite"),
           options = layersControlOptions(collapsed = TRUE)) %>%
         addMeasure(position = "topleft",
                    primaryLengthUnit = "meters",

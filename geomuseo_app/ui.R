@@ -3,18 +3,49 @@ library(shinythemes)
 library(markdown)
 library(ggplot2)
 library(leaflet)
+library(lubridate)
 
-navbarPage("GEOMUSEO",
-           selected = "Inicio", 
+navbarPage(position = "fixed-top", 
+           header = tags$head(
+             tags$meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+             tags$meta(name="description", content=""),
+             tags$meta(name="Gabriel Gaona", content=""),
+             tags$title("Geomuseo versión 0.1"),
+             tags$link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css"),
+             tags$link(href="css/nivo-lightbox.css", rel="stylesheet"),
+             tags$link(href="css/nivo-lightbox-theme/default/default.css", rel="stylesheet", type="text/css"),
+             tags$link(href="css/animate.css", rel="stylesheet"),
+             tags$link(href="css/style.css", rel="stylesheet"),
+             tags$link(href="color/default.css", rel="stylesheet")
+           ),
+           title = "GEOMUSEO",
+           selected = "Inicio",
            tabPanel("Inicio",
+                    style="width: 100%; height: 100%;",
                     source("www/home.R")
            ),
            tabPanel(title = "Muestras",
-                    fluidRow(class = "well",
-                             column(width=3,
-                                    selectInput("tipo", label =  "Tipo",
-                                                choices =  unique(serv_input$muestra)),
-                                    selected = character())
+                        fluidRow(class = "well", 
+                                 column(width=3,
+                                        selectInput("filtrotipo", 
+                                                    label =  "Tipo de muestra",
+                                                    choices =  unique(data$TIPO_MUESTRA),
+                                                    multiple = TRUE,
+                                                    selected = character())
+                                        ),
+                                 column(width=3,
+                                        selectInput("filtroformacion", 
+                                                    label =  "Formación",
+                                                    "",
+                                                    multiple = TRUE
+                                                    )
+                                        ),
+                                 column(width=3,
+                                        dateRangeInput("filtrofecha", 
+                                                       label =  "Fecha",
+                                                       start = min(data$FECHA - days(1), na.rm = T),
+                                                       separator = " - ")
+                                        )
                     ),
                     fluidRow(column(width=6,
                                     DT::dataTableOutput("table")),
@@ -34,6 +65,13 @@ navbarPage("GEOMUSEO",
                                  style = "width: 50%")
                       )
                     )
-           )
+           ),
+           tags$script(src = "js/jquery.easing.min.js"),
+           tags$script(src = "js/classie.js"),
+           tags$script(src = "js/gnmenu.js"),
+           tags$script(src = "js/jquery.scrollTo.js"),
+           tags$script(src = "js/nivo-lightbox.min.js"),
+           tags$script(src = "js/stellar.js"),
+           tags$script(src = "js/custom.js")
 )
 

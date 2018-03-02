@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+.httr-oauth
+geomuseo_app/rds/MuestrasPetrografia_TK.rds

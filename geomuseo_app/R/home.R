@@ -90,7 +90,6 @@ div(
                                 includeMarkdown("md/equipo_tecnico.md")
                                 )
                             )
-                        )
                     ),
                     div(class = "col-lg-8",
                         h2("El proyecto"),

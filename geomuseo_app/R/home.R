@@ -64,7 +64,7 @@ div(
                             div(class = "row",
                                 align = "left",
                                 div(class = "col-md-3", tags$b("Dirección:")),
-                                div(class = "col-md-9", "Glenda Loayza")
+                                div(class = "col-md-9", "Ing. Glenda Loayza")
                             ),
                             div(class = "row",
                                 align = "left",
@@ -85,7 +85,7 @@ div(
                         ),
                         div(class = "row",
                             align = "left",
-                            div(class = "col-md-3", tags$b("Equipo técnico:")),
+                            div(class = "col-md-3", tags$b("Colaboración y trabajo en campo:")),
                             div(class = "col-md-9",
                                 tags$ul(
                                   tags$li("Jeferson Cargua",
@@ -115,8 +115,7 @@ div(
                         h2("El proyecto"),
                         div(class = "section-heading",
                             align = "left",
-                            p(class = "text-justify", 
-                              "Aquí va más información sobre el proyecto")
+                            includeMarkdown("md/home_project.md")
                         )
                     )
                 )

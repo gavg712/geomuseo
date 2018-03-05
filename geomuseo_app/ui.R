@@ -22,7 +22,7 @@ navbarPage(position = "fixed-top",
            selected = "Inicio",
            tabPanel("Inicio",
                     style="width: 100%; height: 100%;",
-                    source("www/home.R")
+                    source("R/home.R")
            ),
            tabPanel(title = "Muestras",
                         fluidRow(class = "well", 
@@ -56,22 +56,26 @@ navbarPage(position = "fixed-top",
            ),
            tabPanel("Acerca de",
                     fluidRow(
-                      column(6,
-                             includeMarkdown("about.md")
+                      fluidRow(hr()),
+                      fluidRow(
+                        column(2, style="padding: 10px;", offset = 2, 
+                               includeMarkdown("md/logos.md")
+                        ),
+                        column(7, style="padding: 10px;",
+                               includeMarkdown("md/about.md")
+                        )
                       ),
-                      column(3,
-                             img(class="img-polaroid",
-                                 src="Ikiam.png",
-                                 style = "width: 50%")
-                      )
+                      fluidRow(hr())
                     )
            ),
-           tags$script(src = "js/jquery.easing.min.js"),
-           tags$script(src = "js/classie.js"),
-           tags$script(src = "js/gnmenu.js"),
-           tags$script(src = "js/jquery.scrollTo.js"),
-           tags$script(src = "js/nivo-lightbox.min.js"),
-           tags$script(src = "js/stellar.js"),
-           tags$script(src = "js/custom.js")
+           footer = tags$footer(
+             tags$script(src = "js/jquery.easing.min.js"),
+             tags$script(src = "js/classie.js"),
+             tags$script(src = "js/gnmenu.js"),
+             tags$script(src = "js/jquery.scrollTo.js"),
+             tags$script(src = "js/nivo-lightbox.min.js"),
+             tags$script(src = "js/stellar.js"),
+             tags$script(src = "js/custom.js")
+           )
 )
 

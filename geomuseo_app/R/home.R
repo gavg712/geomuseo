@@ -85,28 +85,9 @@ div(
                         ),
                         div(class = "row",
                             align = "left",
-                            div(class = "col-md-3", tags$b("Colaboración y trabajo en campo:")),
+                            div(class = "col-md-3", tags$b("Trabajo de campo:")),
                             div(class = "col-md-9",
-                                tags$ul(
-                                  tags$li("Jeferson Cargua",
-                                          a(href = "https://www.researchgate.net/profile/Jeferson_Cargua", 
-                                            "Perfil")
-                                  ),
-                                  tags$li("Anderson Guamán",
-                                          a(href = "https://www.researchgate.net/profile/Anderson_Guaman", 
-                                            "Perfil")
-                                  ),
-                                  tags$li("Stalin Guamán",
-                                          a(href = "https://www.researchgate.net/profile/Stalin_Guaman", 
-                                            "Perfil")
-                                  ),
-                                  tags$li("Cristofer Paredes",
-                                          a(href = "https://www.researchgate.net/profile/Jeferson_Cargua", "Perfil")
-                                  ),
-                                  tags$li("Diana Quilumba",
-                                          a(href = "https://www.researchgate.net/profile/Diana_Quilumba", 
-                                            "Perfil")
-                                  )
+                                includeMarkdown("md/equipo_tecnico.md")
                                 )
                             )
                         )

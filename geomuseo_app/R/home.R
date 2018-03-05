@@ -326,20 +326,13 @@ div(
       tags$footer(
         div(class = "container",
             div(class = "row",
-                div(class = "col-md-6" >
+                div(class = "col-md-6",
                       p("Volver al ",
                         a(href = "#intro", 
                           class = "btn btn-skin scroll", 
                           "Inicio"
                         )
                       )
-                ),
-                div(class = "col-md-6",
-                    p("Ir al ",
-                      a(href = "http://gavg712.com", 
-                        class = "btn btn-skin scroll",
-                        "Blog")
-                    )
                 )
             )
         )

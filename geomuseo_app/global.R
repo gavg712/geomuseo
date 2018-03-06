@@ -19,7 +19,10 @@ data <- gs_read(gap, 1) %>%
                          "' style='width:80px'>"),
          htmlImagen2 = paste0("<img src='",
                          file.path("fotos", FOTOS),
-                         "' style='width: 100%'>"))
+                         "' style='width: 100%'>"),
+         htmlImagen3 = paste0("<img class='img-rounded' src='",
+                             file.path("fotos", FOTOS),
+                             "' style='width:80%'>"))
 
 #Generating the interactive choices
 

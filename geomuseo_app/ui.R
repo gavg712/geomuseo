@@ -20,7 +20,7 @@ navbarPage(position = "fixed-top",
            selected = "Inicio",
            tabPanel("Inicio",
                     style="width: 100%; height: 100%;",
-                    source("R/home.R")
+                    fluidRow(source("R/home.R"))
            ),
            tabPanel(title = "Muestras",
                         fluidRow(class = "well", 

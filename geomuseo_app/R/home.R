@@ -1,9 +1,8 @@
-div(
-  div(class = "container",
+div(class = "container-global",
       tags$ul(id = "gn-menu",
               class = "gn-menu-main",
               tags$li(class = "gn-trigger",
-                      a(class = "gn-icon gn-icon-menu", "Menu"),
+                      a(class = "gn-icon gn-icon-menu", ""),
                       tags$nav(class = "gn-menu-wrapper",
                                div(class = "gn-scroller",
                                    tags$ul(class = "gn-menu",
@@ -38,7 +37,7 @@ div(
         div(class = "slogan",
             h1(color = "white", "Geomuseo"),
             p(strong("Un proyecto de estudiantes de la carrera de Ingeniería en 
-            Geociencias de la Universidad Regional Amazónica Ikiam")
+            Geociencias de",  br(), "la Universidad Regional Amazónica Ikiam")
             )
         ),
         div(class = "row",
@@ -302,20 +301,5 @@ div(
                 )
             )
         )
-      ),
-      tags$footer(
-        div(class = "container",
-            div(class = "row",
-                div(class = "col-md-6",
-                      p("Volver al ",
-                        a(href = "#intro", 
-                          class = "btn btn-skin scroll", 
-                          "Inicio"
-                        )
-                      )
-                )
-            )
-        )
       )
-  )
 )

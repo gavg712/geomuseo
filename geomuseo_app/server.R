@@ -10,7 +10,7 @@ function(input, output, session) {
     if(length(input$filtrotipo)) {
       x <- x %>%
         filter(TIPO_MUESTRA %in% input$filtrotipo)
-    }
+    } 
     
     if(length(input$filtroformacion)){
       x <- x %>%
@@ -20,8 +20,11 @@ function(input, output, session) {
   })
   
   formChoices <- reactive({
-    d <- data %>% 
-      filter(TIPO_MUESTRA %in% input$filtrotipo) 
+    d <- data
+    if(length(input$filtrotipo)) {
+      d <- d %>%
+        filter(TIPO_MUESTRA %in% input$filtrotipo)
+    } 
     return(c("Choose one" = "", unique(as.character(d$FORMACION))))
   })
 
@@ -41,7 +44,7 @@ function(input, output, session) {
              Localidad = LOCALIDAD) %>%
       DT::datatable(escape = F, 
                     selection = "single", 
-                    options = list(pageLength = 4)), 
+                    options = list(pageLength = 4, scrollX = TRUE)), 
     server = TRUE
   )
   
@@ -50,12 +53,93 @@ function(input, output, session) {
                  showModal(modalDialog(
                    title = paste("Muestra:", serv_input()$NOMBRE_ROCA[input$table_rows_selected],
                                  "Código:", serv_input()$CODIGO[input$table_rows_selected]),
-                   div(helpText("Un marcador ha sido agregado en el mapa,
-                                puede consultar más información haciendo clic sobre él"), 
-                       HTML(serv_input()$htmlImagen2[input$table_rows_selected])),
+                   tabsetPanel(
+                     tabPanel("Ficha", 
+                              fluidRow(class="container-fluid",
+                                fluidRow(
+                                  column(width = 6,
+                                         img(style="float: left; margin-left: 25%", src="Ikiam.png", width="50%")
+                                  ),
+                                  column(width = 6,
+                                         img(style="float: right; margin-right: 25%", src="Logo.jpg", width="50%")
+                                  )
+                                ),
+                                fluidRow(class="text-center",
+                                         h3("Laboratorio de Petrografía")
+                                ),
+                                fluidRow(class="container-fluid",
+                                          fluidRow(
+                                            column(width = 6,
+                                                   fluidRow(
+                                                     column(width = 4,strong("Autor:")),
+                                                     column(width = 8,serv_input()$AUTOR[input$table_rows_selected])
+                                                   ),
+                                                   fluidRow(
+                                                     column(width = 4,strong("Fecha:")),
+                                                     column(width = 8,serv_input()$FECHA[input$table_rows_selected])
+                                                   ),
+                                                   fluidRow(
+                                                     column(width = 4,strong(" Coordenadas:")),
+                                                     column(width = 8,
+                                                            "epsg:32718", br(),
+                                                            serv_input()$X[input$table_rows_selected], "E", br(),
+                                                            serv_input()$Y[input$table_rows_selected], "N")
+                                                   ),
+                                                   fluidRow(
+                                                     column(width = 4,strong("Localidad:")),
+                                                     column(width = 8,serv_input()$LOCALIDAD[input$table_rows_selected])
+                                                   ),
+                                                   fluidRow(
+                                                     column(width = 4,strong("Formación:")),
+                                                     column(width = 8,serv_input()$FORMACION[input$table_rows_selected])
+                                                   )
+                                            ),
+                                            column(width = 6,
+                                                   fluidRow(HTML(serv_input()$htmlImagen3[input$table_rows_selected])),
+                                                   fluidRow(
+                                                     column(width = 4,strong("Nombre de roca:")),
+                                                     column(width = 8,serv_input()$NOMBRE_ROCA[input$table_rows_selected])
+                                                   ),
+                                                   fluidRow(
+                                                     column(width = 4,strong("Código de roca:")),
+                                                     column(width = 8,serv_input()$CODIGO[input$table_rows_selected])
+                                                   )
+                                            )
+                                          ),
+                                         fluidRow(class="container-fluid",
+                                                  strong("Descripción Macroscópica:"), 
+                                                  br(),
+                                                  serv_input()$DESC_MACRO[input$table_rows_selected]
+                                         ),
+                                         fluidRow(class="container-fluid",
+                                                  strong("Descripción Microscópica:"), 
+                                                  br(),
+                                                  serv_input()$DESC_MICRO[input$table_rows_selected]
+                                         ),
+                                         fluidRow(class="container-fluid text-center",
+                                                  column(6, 
+                                                         img(class = "img-circle", alt = "Foto: Nícoles paralelos", src="ND.png", width="80%"),
+                                                         p(strong("Foto:"), "Nícoles paralelos")
+                                                  ),
+                                                  column(6, 
+                                                         img(class = "img-circle", alt = "Foto: Nícoles cruzados", src="ND.png", width="80%"),
+                                                         p(strong("Foto:"), "Nícoles cruzados")
+                                                  )
+                                         )
+                                )
+                              ),
+                              helpText("NOTA: Un marcador ha sido agregado en el mapa,
+                                puede consultar más información haciendo clic sobre él")
+                              ),
+                     tabPanel("Foto ampliada", 
+                              HTML(serv_input()$htmlImagen2[input$table_rows_selected]), 
+                              helpText("NOTA: Un marcador ha sido agregado en el mapa,
+                                puede consultar más información haciendo clic sobre él")
+                              )
+                     ),
                    easyClose = TRUE,
                    footer = modalButton("Cerrar"), 
-                   size = "m")
+                   size = "l")
                  )
                })
   

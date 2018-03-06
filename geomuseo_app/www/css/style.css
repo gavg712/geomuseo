@@ -17,6 +17,13 @@ html {
     height: 100%;
 }
 
+.container-global {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 h1,
 h2,
 h3,
@@ -146,8 +153,8 @@ hr {
 
 .gn-menu-main {
 		position: fixed;
-		top: 0; /* default 10px */
-		left: 10px;
+		top: 70; /* default 10px */
+		left: 0px;
 		width: 60;
 		height: 60px;
 		font-size: 13px;
@@ -196,7 +203,7 @@ hr {
 }
 
 .gn-menu-main > li > a {
-		padding: 70px 0px 0px; /* default 0 30px */
+		padding: 0px 30px; /* default 0 30px */
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-weight: bold;
@@ -210,7 +217,7 @@ hr {
 
 .gn-menu-wrapper {
 		position: fixed;
-		top: 130px;
+		top: 110px;
 		bottom: 0;
 		left: 0;
 		overflow: hidden;

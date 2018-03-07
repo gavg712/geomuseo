@@ -63,7 +63,7 @@ div(class = "container-global",
                             div(class = "row",
                                 align = "left",
                                 div(class = "col-md-3", tags$b("Dirección:")),
-                                div(class = "col-md-9", "Ing. Glenda Loayza")
+                                div(class = "col-md-9", "Glenda Loayza Toro")
                             ),
                             div(class = "row",
                                 align = "left",

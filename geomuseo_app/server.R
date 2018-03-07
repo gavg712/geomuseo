@@ -96,7 +96,7 @@ function(input, output, session) {
                                             ),
                                             column(width = 6,
                                                    fluidRow(img(class = "img-rounded", 
-                                                                src = file.path("fotos", FOTOS),
+                                                                src = file.path("fotos",serv_input()$FOTOS[input$table_rows_selected]),
                                                                 style='width:80%;')),
                                                    fluidRow(
                                                      column(width = 4,strong("Nombre de roca:")),

@@ -265,7 +265,29 @@ div(class = "container-global",
                     div(class = "boxed-grey",
                         div(class = "boxed-grey",
                             div(class = "widget-contact row",
-                                div(class = "col-lg-6",
+                                div(class = "row text-center",
+                                    div(class = "col-lg-6",
+                                        tags$address(strong("Bruno Conicelli"),
+                                                     br(),
+                                                     "bruno.conicelli@ikiam.edu.ec ",
+                                                     br(),
+                                                     "Director de Ingeniería en Geociencias",
+                                                     br(), 
+                                                     "Campus Universitario Ikiam"
+                                        )
+                                    ),
+                                    div(class = "col-lg-6",
+                                        tags$address(strong("Marco Simbaña"),
+                                                     br(),
+                                                     "marcosimabna@ikiam.edu.ec",
+                                                     br(),
+                                                     "Profesor de Ingeniería en Geociencias",
+                                                     br(), 
+                                                     "Campus Universitario Ikiam"
+                                        )
+                                    )
+                                ),
+                                div(class = "row text-center",
                                     tags$address(strong("Universidad Regional Amazónica Ikiam"),
                                                  br(),
                                                  "Campus Universitario",
@@ -275,24 +297,6 @@ div(class = "container-global",
                                                  " (+593) 63-700-040",
                                                  br(),
                                                  "Tena, Napo - Ecuador"
-                                    )
-                                ),
-                                div(class = "col-lg-6",
-                                    tags$address(strong("Marco Simbaña"),
-                                                 br(),
-                                                 "marcosimabna@ikiam.edu.ec",
-                                                 br(),
-                                                 "Profesor de Ingeniería en Geociencias",
-                                                 br(), 
-                                                 "Campus Universitario Ikiam"
-                                    ),
-                                    tags$address(strong("Bruno Conicelli"),
-                                                 br(),
-                                                 "bruno.conicelli@ikiam.edu.ec ",
-                                                 br(),
-                                                 "Director de Ingeniería en Geociencias",
-                                                 br(), 
-                                                 "Campus Universitario Ikiam"
                                     )
                                 )
                             )

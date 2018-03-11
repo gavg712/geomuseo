@@ -1,4 +1,5 @@
 div(class = "container-global",
+    # Menu ----
       tags$ul(id = "gn-menu",
               class = "gn-menu-main",
               tags$li(class = "gn-trigger",
@@ -13,10 +14,10 @@ div(class = "container-global",
                                                              class = "gn-icon gn-icon-user", 
                                                              "Sobre el proyecto")
                                                    ),
-                                                   tags$li(a(href = "#service", 
-                                                             class = "gn-icon gn-icon-service", 
-                                                             "Servicios")
-                                                   ),
+                                                   # tags$li(a(href = "#service", 
+                                                   #           class = "gn-icon gn-icon-service", 
+                                                   #           "Servicios")
+                                                   # ),
                                                    tags$li(a(href = "#works", 
                                                              class = "gn-icon gn-icon-expert", 
                                                              "Galería")
@@ -31,6 +32,7 @@ div(class = "container-global",
                       )
               )
       ),
+    # Intro ----
       tags$section(
         id = "intro",
         class = "intro",
@@ -47,6 +49,7 @@ div(class = "container-global",
               "Leer más...")
         )
       ),
+    # About ----
       tags$section(
         id = "about",
         class = "home-section text-center bg-gray",
@@ -56,7 +59,7 @@ div(class = "container-global",
                     div(class = "col-lg-3",
                         div(class = "inner",
                             div(class = "avatar",
-                                img(src = "img/team/RS-001.jpg",
+                                img(src = "img/team/QS.JPG",
                                     alt = "",
                                     class = "img-responsive")
                             ),
@@ -92,8 +95,8 @@ div(class = "container-global",
                     ),
                     div(class = "col-lg-8",
                         h2("El proyecto"),
-                        div(class = "section-heading",
-                            align = "left",
+                        div(class = "section-heading text-justify",
+                            align = "justify",
                             includeMarkdown("md/home_project.md")
                         )
                     )
@@ -106,144 +109,126 @@ div(class = "container-global",
               "más...")
         )
       ),
-      tags$section(
-        id = "service",
-        class = "home-section text-center",
-        div(class = "heading-about marginbot-50",
-            div(class = "container",
-                div(class = "row",
-                    div(class = "col-lg-8 col-lg-offset-2",
-                        div(class = "section-heading",
-                            h2("Servicios"),
-                            p("Sistemas de información geográfica y análisis 
-                          espacial de información meteorológica")
-                        )
-                    )
-                )
-            )
-        ),
-        div(class = "container",
-            div(class = "row",
-                div(class = "col-sm-3 col-md-3",
-                    div(class = "service-box",
-                        div(class = "service-icon",
-                            tags$i(class = "fa fa-globe fa-3x")),
-                        div(class = "service-desc",
-                            h5("Cartografía"),
-                            p("Estudios y levantamiento de cartografía temática 
-                    en el área de las ciencias del medio ambiente.")
-                        )
-                    )
-                ),
-                div(class = "col-sm-3 col-md-3",
-                    div(class = "service-box",
-                        div(class = "service-icon",
-                            tags$i(class = "fa fa-cube fa-3x")
-                        ),
-                        div(class = "service-desc",
-                            h5("Análisis espacial"),
-                            p("Investigación y cálculos espaciales mediante modelos 
-                      numéricos de variables ambientales."
-                            )
-                        )
-                    )
-                ),
-                div(class = "col-sm-3 col-md-3",
-                    div(class = "service-box",
-                        div(class = "service-icon",
-                            tags$i(class = "fa fa-database fa-3x"),
-                            div(class = "service-desc",
-                                h5("IDE's"),
-                                p("Desarrollo e Implementación de infraestructuras 
-                              de datos espaciales.")
-                            )
-                        )
-                    )
-                ),
-                div(class = "col-sm-3 col-md-3",
-                    div(class = "service-box",
-                        div(class = "service-icon",
-                            tags$i(class = "fa fa-graduation-cap fa-3x")
-                        ),
-                        div(class = "service-desc",
-                            h5("Educación e Interpretación ambiental"),
-                            p("Diseño de planes de educación ambiental e 
-                          interpretación del paisaje."
-                            )
-                        )
-                    )
-                )
-            )
-        ),
-        div(class = "row",
-            a(href = "#works",
-              class = "btn btn-skin scroll", 
-              "más..."
-            )
-        )
+    # trabajos ----
+      # tags$section(
+      #   id = "service",
+      #   class = "home-section text-center",
+      #   div(class = "heading-about marginbot-50",
+      #       div(class = "container",
+      #           div(class = "row",
+      #               div(class = "col-lg-8 col-lg-offset-2",
+      #                   div(class = "section-heading",
+      #                       h2("Trabajos"),
+      #                       p("Sistemas de información geográfica y análisis 
+      #                     espacial de información meteorológica")
+      #                   )
+      #               )
+      #           )
+      #       )
+      #   ),
+      #   div(class = "container",
+      #       div(class = "row",
+      #           div(class = "col-sm-3 col-md-3",
+      #               div(class = "service-box",
+      #                   div(class = "service-icon",
+      #                       tags$i(class = "fa fa-globe fa-3x")),
+      #                   div(class = "service-desc",
+      #                       h5("Cartografía"),
+      #                       p("Estudios y levantamiento de cartografía temática 
+      #               en el área de las ciencias del medio ambiente.")
+      #                   )
+      #               )
+      #           ),
+      #           div(class = "col-sm-3 col-md-3",
+      #               div(class = "service-box",
+      #                   div(class = "service-icon",
+      #                       tags$i(class = "fa fa-cube fa-3x")
+      #                   ),
+      #                   div(class = "service-desc",
+      #                       h5("Análisis espacial"),
+      #                       p("Investigación y cálculos espaciales mediante modelos 
+      #                 numéricos de variables ambientales."
+      #                       )
+      #                   )
+      #               )
+      #           ),
+      #           div(class = "col-sm-3 col-md-3",
+      #               div(class = "service-box",
+      #                   div(class = "service-icon",
+      #                       tags$i(class = "fa fa-database fa-3x"),
+      #                       div(class = "service-desc",
+      #                           h5("IDE's"),
+      #                           p("Desarrollo e Implementación de infraestructuras 
+      #                         de datos espaciales.")
+      #                       )
+      #                   )
+      #               )
+      #           ),
+      #           div(class = "col-sm-3 col-md-3",
+      #               div(class = "service-box",
+      #                   div(class = "service-icon",
+      #                       tags$i(class = "fa fa-graduation-cap fa-3x")
+      #                   ),
+      #                   div(class = "service-desc",
+      #                       h5("Educación e Interpretación ambiental"),
+      #                       p("Diseño de planes de educación ambiental e 
+      #                     interpretación del paisaje."
+      #                       )
+      #                   )
+      #               )
+      #           )
+      #       )
+      #   ),
+      #   div(class = "row",
+      #       a(href = "#works",
+      #         class = "btn btn-skin scroll", 
+      #         "más..."
+      #       )
+      #   )
+      # ),
+    # Galery ----
+    tags$section(
+      id = "works",
+      class = "home-section text-center bg-gray",
+      div(class = "heading-works marginbot-50",
+          div(class = "container",
+              div(class = "row",
+                  div(class = "col-lg-8 col-lg-offset-2",
+                      div(class = "section-heading",
+                          h2("Galería")#, p("Fotografía e imágenes que describan el proyecto...")
+                      )
+                  )
+              )
+          )
       ),
-      tags$section(
-        id = "works",
-        class = "home-section text-center bg-gray",
-        div(class = "heading-works marginbot-50",
-            div(class = "container",
-                div(class = "row",
-                    div(class = "col-lg-8 col-lg-offset-2",
-                        div(class = "section-heading",
-                            h2("Galería"),
-                            p("Fotografía e imágenes que describan el proyecto...")
-                        )
-                    )
-                )
-            )
-        ),
-        div(class = "container",
-            div(class = "row",
-                div(class = "col-sm-12 col-md-12 col-lg-12",
-                    div(class = "row gallery-item",
-                        div(class = "col-md-3",
-                            a(href = "img/works/1.png",
-                              title = "Mapa de cobertura vegetal del Cantón Catamayo, Loja, Ec.",
-                              `data-lightbox-gallery` = "gallery1",
-                              `data-lightbox-hidpi` = "img/works/1@2x.png",
-                              img(src = "img/works/1.png",
-                                  class = "img-responsive",
-                                  alt = "img"),
-                              "Mas info:",
-                              a(href = "http://app.sni.gob.ec/sni-link/sni/PDOT/ZONA7/NIVEL_DEL_PDOT_CANTONAL/LOJA/CATAMAYO/IEE/1.%20Documentos/Pdf/3.%20Sistemas%20productivos/MEMORIA%20CATAMAYO_IE_20120327.pdf",
-                                "Memoria Técnica")
-                            )
-                        ),
-                        div(class = "col-md-3",
-                            a(href = "img/works/2.png",
-                              title = "Mapa de ruido de la ciudadela universitaria Guillermo Falconí Espinosa, UNL, Loja, Ec.",
-                              `data-lightbox-gallery` = "gallery1",
-                              `data-lightbox-hidpi` = "img/works/1@2x.png",
-                              img(src = "img/works/2.png", 
-                                  class = "img-responsive", 
-                                  alt = "img")
-                            )
-                        ),
-                        div(class = "col-md-3",
-                            a(href = "img/works/3.png",
-                              title = "Estación meteorológica instalada en El Tiro, Loja, Ec.",
-                              `data-lightbox-gallery` = "gallery1",
-                              `data-lightbox-hidpi` = "img/works/1@2x.png",
-                              img(src = "img/works/3.png", 
-                                  class = "img-responsive", 
-                                  alt = "img")
-                            )
-                        )
-                    )
-                )
-            ),
-            div(class = "row",
-                a(href = "#contact", 
-                  class = "btn btn-skin scroll", 
-                  "más...")
-            )
-        )
-      ),
+      div(class = "container",
+          div(class = "row",
+              div(class = "col-sm-12 col-md-12 col-lg-12",
+                  div(class = "row gallery-item",
+                      lapply(list.files("www/img/works", "jpg$"),
+                             photoGallery, path = "img/works", ncol = 6) %>%
+                        rowGallery(nc = 6)
+                      # div(class = "col-md-2",
+                      #     a(href = "img/works/1.jpg",
+                      #       title = "Salida de campo al Mirador Pisque, Guayllabamba - Pichincha, Ec.",
+                      #       `data-lightbox-gallery` = "gallery1",
+                      #       `data-lightbox-hidpi` = "img/works/1@2x.png",
+                      #       img(src = "img/works/1.jpg",
+                      #           class = "img-responsive",
+                      #           alt = "img")
+                      #     )
+                      # )
+                  )
+              )
+          ),
+          div(class = "row",
+              a(href = "#contact", 
+                class = "btn btn-skin scroll", 
+                "más...")
+          )
+      )
+    ),
+    # Contacto ----
       tags$section(
         id = "contact",
         class = "home-section text-center",
@@ -279,7 +264,7 @@ div(class = "container-global",
                                     div(class = "col-lg-6",
                                         tags$address(strong("Marco Simbaña"),
                                                      br(),
-                                                     "marcosimabna@ikiam.edu.ec",
+                                                     "marcosimbana@ikiam.edu.ec",
                                                      br(),
                                                      "Profesor de Ingeniería en Geociencias",
                                                      br(), 

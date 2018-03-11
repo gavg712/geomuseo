@@ -58,87 +58,115 @@ function(input, output, session) {
                               fluidRow(class="container-fluid",
                                 fluidRow(
                                   column(width = 6,
-                                         img(style="float: left; margin-left: 25%", src="Ikiam.png", width="50%")
+                                         img(style="float: left; margin-left: 25%; padding: 5px 0px", 
+                                             src="Ikiam.png", 
+                                             width="50%")
                                   ),
                                   column(width = 6,
-                                         img(style="float: right; margin-right: 25%", src="Logo.jpg", width="50%")
+                                         img(style="float: right; margin-right: 25%; padding: 5px 0px", 
+                                             src="Logo.jpg", 
+                                             width="50%")
                                   )
                                 ),
                                 fluidRow(class="text-center",
                                          h3("Laboratorio de Petrografía")
                                 ),
                                 fluidRow(class="container-fluid",
-                                          fluidRow(
-                                            column(width = 6,
-                                                   fluidRow(
-                                                     column(width = 4,strong("Autor:")),
-                                                     column(width = 8,serv_input()$AUTOR[input$table_rows_selected])
-                                                   ),
-                                                   fluidRow(
-                                                     column(width = 4,strong("Fecha:")),
-                                                     column(width = 8,serv_input()$FECHA[input$table_rows_selected])
-                                                   ),
-                                                   fluidRow(
-                                                     column(width = 4,strong(" Coordenadas:")),
-                                                     column(width = 8,
-                                                            "epsg:32718", br(),
-                                                            serv_input()$X[input$table_rows_selected], "E", br(),
-                                                            serv_input()$Y[input$table_rows_selected], "N")
-                                                   ),
-                                                   fluidRow(
-                                                     column(width = 4,strong("Localidad:")),
-                                                     column(width = 8,serv_input()$LOCALIDAD[input$table_rows_selected])
-                                                   ),
-                                                   fluidRow(
-                                                     column(width = 4,strong("Formación:")),
-                                                     column(width = 8,serv_input()$FORMACION[input$table_rows_selected])
-                                                   )
-                                            ),
-                                            column(width = 6,
-                                                   fluidRow(img(class = "img-rounded", 
-                                                                src = file.path("fotos",serv_input()$FOTOS[input$table_rows_selected]),
-                                                                style='width:80%;')),
-                                                   fluidRow(
-                                                     column(width = 4,strong("Nombre de roca:")),
-                                                     column(width = 8,serv_input()$NOMBRE_ROCA[input$table_rows_selected])
-                                                   ),
-                                                   fluidRow(
-                                                     column(width = 4,strong("Código de roca:")),
-                                                     column(width = 8,serv_input()$CODIGO[input$table_rows_selected])
-                                                   )
-                                            )
-                                          ),
-                                         fluidRow(class="container-fluid",
+                                         fluidRow( class="bordered",
+                                           column(width = 6,
+                                                  fluidRow( 
+                                                           column(width = 4,strong("Autor:")),
+                                                           column(width = 8,serv_input()$AUTOR[input$table_rows_selected])
+                                                  ),
+                                                  fluidRow(
+                                                           column(width = 4,strong("Fecha:")),
+                                                           column(width = 8,serv_input()$FECHA[input$table_rows_selected])
+                                                  ),
+                                                  fluidRow(
+                                                           column(width = 4,strong(" Coordenadas:")),
+                                                           column(width = 8,
+                                                                  "epsg:32718", br(),
+                                                                  serv_input()$X[input$table_rows_selected], "E", br(),
+                                                                  serv_input()$Y[input$table_rows_selected], "N")
+                                                  )
+                                           ),
+                                           column(width = 6,
+                                                  fluidRow(
+                                                    img(class = "img-rounded", 
+                                                        src = file.path("fotos", serv_input()$FOTOS[input$table_rows_selected]),
+                                                        style='height:100px; display: block; margin-left: auto; margin-right: auto;'))
+                                           )
+                                         ),
+                                         fluidRow(
+                                           column(width = 6,
+                                                  fluidRow(class="bordered",
+                                                           column(width = 4,strong("Localidad:")),
+                                                           column(width = 8,serv_input()$LOCALIDAD[input$table_rows_selected])
+                                                  ),
+                                                  fluidRow(class="bordered",
+                                                           column(width = 4,strong("Formación:")),
+                                                           column(width = 8,serv_input()$FORMACION[input$table_rows_selected])
+                                                  )
+                                           ),
+                                           column(width = 6,
+                                                  fluidRow(class="bordered",
+                                                           column(width = 4,strong("Nombre de roca:")),
+                                                           column(width = 8,serv_input()$NOMBRE_ROCA[input$table_rows_selected])
+                                                  ),
+                                                  fluidRow(class="bordered",
+                                                           column(width = 4,strong("Código de roca:")),
+                                                           column(width = 8,serv_input()$CODIGO[input$table_rows_selected])
+                                                  )
+                                           )
+                                         ),
+                                         fluidRow(class="container-fluid bordered",
                                                   strong("Descripción Macroscópica:"), 
                                                   br(),
                                                   serv_input()$DESC_MACRO[input$table_rows_selected]
                                          ),
-                                         fluidRow(class="container-fluid",
+                                         fluidRow(class="container-fluid bordered",
                                                   strong("Descripción Microscópica:"), 
                                                   br(),
                                                   serv_input()$DESC_MICRO[input$table_rows_selected]
                                          ),
                                          fluidRow(class="container-fluid text-center",
                                                   column(6, 
-                                                         img(class = "img-circle", alt = "Foto: Nícoles paralelos", src="ND.png", width="80%"),
+                                                         img(class = "img-circle", alt = "Foto: Nícoles paralelos", 
+                                                             src="ND.png", 
+                                                             width="80%",
+                                                             style = "padding: 5px 0px;"),
                                                          p(strong("Foto:"), "Nícoles paralelos")
                                                   ),
                                                   column(6, 
-                                                         img(class = "img-circle", alt = "Foto: Nícoles cruzados", src="ND.png", width="80%"),
+                                                         img(class = "img-circle", alt = "Foto: Nícoles cruzados", 
+                                                             src = "ND.png", 
+                                                             width = "80%",
+                                                             style = "padding: 5px 0px;"),
                                                          p(strong("Foto:"), "Nícoles cruzados")
                                                   )
                                          )
                                 )
                               ),
-                              helpText("NOTA: Un marcador ha sido agregado en el mapa,
-                                puede consultar más información haciendo clic sobre él")
+                              fluidRow(class="container-fluid bordered",
+                                       strong("Comentarios:"), 
+                                       br()
                               ),
+                              fluidRow(class="container-fluid",
+                                       a(href=file.path("fichas", 
+                                                        paste0(serv_input()$CODIGO[input$table_rows_selected], 
+                                                               ".pdf")), 
+                                         "Descargar Ficha en PDF", target="_blank"),
+                                       helpText("NOTA: Un marcador ha sido agregado en el mapa,
+                                puede consultar más información haciendo clic sobre él")
+                              )
+                             
+                     ),
                      tabPanel("Foto ampliada", 
                               HTML(serv_input()$htmlImagen2[input$table_rows_selected]), 
                               helpText("NOTA: Un marcador ha sido agregado en el mapa,
                                 puede consultar más información haciendo clic sobre él")
-                              )
-                     ),
+                     )
+                   ),
                    easyClose = TRUE,
                    footer = modalButton("Cerrar"), 
                    size = "l")

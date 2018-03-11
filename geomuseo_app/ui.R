@@ -56,10 +56,10 @@ navbarPage(position = "fixed-top",
                     fluidRow(
                       fluidRow(hr()),
                       fluidRow(
-                        column(2, style="padding: 10px;", offset = 2, 
+                        column(2, style="padding: 10px;", offset = 1, 
                                includeMarkdown("md/logos.md")
                         ),
-                        column(7, style="padding: 10px;",
+                        column(7, class="text-justify", style="padding: 10px;",
                                includeMarkdown("md/about.md")
                         )
                       ),

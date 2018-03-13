@@ -109,76 +109,59 @@ div(class = "container-global",
               "más...")
         )
       ),
-    # trabajos ----
-      # tags$section(
-      #   id = "service",
-      #   class = "home-section text-center",
-      #   div(class = "heading-about marginbot-50",
-      #       div(class = "container",
-      #           div(class = "row",
-      #               div(class = "col-lg-8 col-lg-offset-2",
-      #                   div(class = "section-heading",
-      #                       h2("Trabajos"),
-      #                       p("Sistemas de información geográfica y análisis 
-      #                     espacial de información meteorológica")
-      #                   )
-      #               )
-      #           )
-      #       )
-      #   ),
-      #   div(class = "container",
-      #       div(class = "row",
-      #           div(class = "col-sm-3 col-md-3",
-      #               div(class = "service-box",
-      #                   div(class = "service-icon",
-      #                       tags$i(class = "fa fa-globe fa-3x")),
-      #                   div(class = "service-desc",
-      #                       h5("Cartografía"),
-      #                       p("Estudios y levantamiento de cartografía temática 
-      #               en el área de las ciencias del medio ambiente.")
-      #                   )
-      #               )
-      #           ),
-      #           div(class = "col-sm-3 col-md-3",
-      #               div(class = "service-box",
-      #                   div(class = "service-icon",
-      #                       tags$i(class = "fa fa-cube fa-3x")
-      #                   ),
-      #                   div(class = "service-desc",
-      #                       h5("Análisis espacial"),
-      #                       p("Investigación y cálculos espaciales mediante modelos 
-      #                 numéricos de variables ambientales."
-      #                       )
-      #                   )
-      #               )
-      #           ),
-      #           div(class = "col-sm-3 col-md-3",
-      #               div(class = "service-box",
-      #                   div(class = "service-icon",
-      #                       tags$i(class = "fa fa-database fa-3x"),
-      #                       div(class = "service-desc",
-      #                           h5("IDE's"),
-      #                           p("Desarrollo e Implementación de infraestructuras 
-      #                         de datos espaciales.")
-      #                       )
-      #                   )
-      #               )
-      #           ),
-      #           div(class = "col-sm-3 col-md-3",
-      #               div(class = "service-box",
-      #                   div(class = "service-icon",
-      #                       tags$i(class = "fa fa-graduation-cap fa-3x")
-      #                   ),
-      #                   div(class = "service-desc",
-      #                       h5("Educación e Interpretación ambiental"),
-      #                       p("Diseño de planes de educación ambiental e 
-      #                     interpretación del paisaje."
-      #                       )
-      #                   )
-      #               )
-      #           )
-      #       )
-      #   ),
+    #trabajos ----
+    tags$section(
+      id = "service",
+      class = "home-section text-center",
+      div(class = "heading-about marginbot-50",
+          div(class = "container",
+              div(class = "row",
+                  div(class = "col-lg-8 col-lg-offset-2",
+                      div(class = "section-heading",
+                          h2("Trabajos"),
+                          p("Trabajos y Publicaciones destacadas")
+                      )
+                  )
+              )
+          )
+      )
+    ),
+    div(class = "container",
+        div(class = "row",
+            div(class = "col-sm-12 col-md-12 col-lg-12",
+                div(class = "row gallery-item",
+                    div(class = "col-md-4",
+                        a(href = "img/jobs/01.jpg",
+                          title = "Salida de Campo geológica y muestreo en la provincia del Napo",
+                          a(href = "img/jobs/01.pdf", target = "_blank", "Descargar documento"),
+                          `data-lightbox-gallery` = "gallery2",
+                          `data-lightbox-hidpi` = "img/jobs/1@2x.png",
+                          img(src = "img/jobs/01.jpg",
+                              class = "img-responsive",
+                              alt = "img")
+                        )
+                    )
+                )
+            )
+        )
+    ),
+    div(class = "container",
+        div(class = "col",
+            div(class = "col-sm-12 col-md-12 col-lg-12",
+                div(class = "col-md-4",
+                    a(href = "img/jobs/02.png",
+                      title = "Reconocimiento geológico al Noreste del Ecuador",
+                      a(href = "img/jobs/01.pdf", target = "_blank", "Descargar documento"),
+                      `data-lightbox-gallery` = "gallery2",
+                      `data-lightbox-hidpi` = "img/jobs/1@2x.png",
+                      img(src = "img/jobs/02.png",
+                          class = "img-responsive",
+                          alt = "img")
+                    )
+                )
+            )
+        )
+    ),
       #   div(class = "row",
       #       a(href = "#works",
       #         class = "btn btn-skin scroll", 

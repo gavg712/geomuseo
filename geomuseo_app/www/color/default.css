@@ -1,13 +1,13 @@
 
 a,.tp-caption a.btn:hover {
-	color: #006600;
+	color: #006600; /* color verde*/
 }
 .top-nav-collapse {
-	background: #006600;
+	background: #006600; /* color verde*/
 }
 
 .navbar-custom ul.nav ul.dropdown-menu li a:hover {
-	color: #006600;
+	color: #006600; /* color verde*/
 }
 
 .owl-theme .owl-controls .owl-page.active span,
@@ -26,11 +26,11 @@ a,.tp-caption a.btn:hover {
 form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
 	border-color: #006600;
 }
-
+/*
 footer {
-    background-color: #006600;
+    background-color: #fff;
 }
-
+*/
 
 .btn-skin {
   color: #fff;

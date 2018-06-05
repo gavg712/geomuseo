@@ -60,7 +60,7 @@ navbarPage(position = "fixed-top",
                           class = "intro",
                           div(class = "slogan",
                               h1(color = "white", "Geomuseo"),
-                              p(strong(htmltools::em(' "Sin Presión, no habría diamantes" ')), br(), "Mary case"
+                              p(strong(htmltools::em(' "Sin Presión, no habrían diamantes" ')), br(), "Mary case"
                               )
                               ),
                            div(class = "container",

@@ -36,19 +36,19 @@ navbarPage(position = "fixed-top",
                                                                      tags$li(a(href = "#about", 
                                                                                class = "gn-icon gn-icon-user", 
                                                                                "Introducción"),
-                                                                     # tags$li(a(href = "#service", 
-                                                                     #           class = "gn-icon gn-icon-service", 
-                                                                     #           "Servicios")
-                                                                     # ),
-                                                                     tags$li(a(href = "#works", 
-                                                                               class = "gn-icon gn-icon-expert", 
-                                                                               "Galería")
-                                                                     ),
-                                                                     tags$li(a(href = "#contact", 
-                                                                               class = "gn-icon gn-icon-earth", 
-                                                                               "Contactos")
+                                                                             tags$li(a(href = "#service", 
+                                                                                       class = "gn-icon gn-icon-service", 
+                                                                                       "Trabajos")
+                                                                             ),
+                                                                             tags$li(a(href = "#works", 
+                                                                                       class = "gn-icon gn-icon-expert", 
+                                                                                       "Galería")
+                                                                             ),
+                                                                             tags$li(a(href = "#contact", 
+                                                                                       class = "gn-icon gn-icon-earth", 
+                                                                                       "Contactos")
+                                                                             )
                                                                      )
-                                                             )
                                                      )
                                                  )
                                         )

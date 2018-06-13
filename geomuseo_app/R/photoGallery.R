@@ -1,11 +1,12 @@
 # Display photos on gallery
 photoGallery <- function(img, path = path, ncol = ncol){
   div(class = paste0("col-md-", 12/ncol),
-      a(href = file.path(path, img),
-        title = "",
+      a(href = file.path(path, basename(img)),
+        title = readLines(str_replace(img, pattern = "jpg$",
+                                      replacement = "txt"), 1),
         `data-lightbox-gallery` = "gallery1",
         `data-lightbox-hidpi` = file.path(path, "1@2x.png"),
-        img(src = file.path(path, img),
+        img(src = file.path(path, basename(img)),
             class = "img-responsive",
             alt = "img")
       )

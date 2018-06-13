@@ -23,7 +23,7 @@ navbarPage(position = "fixed-top",
                     style="width: 100%; height: 100%;",
                     div(class = "container-global",
                         style = "background: white no-repeat;
-                        background-size: cover; height: 92.5vh; width: 100%; position: absolute;
+                        background-size: cover; height: 93.5vh; width: 100%; position: absolute;
 	                      top: 40; left: 0;",
                         # Menu ----
                         tags$ul(id = "gn-menu",
@@ -134,10 +134,10 @@ navbarPage(position = "fixed-top",
                         #trabajos ----
                         tags$section(
                           id = "service",
-                          class = "home-section text-center",
-                          div(class = "heading-about marginbot-50",
+                          class = "home-section text-center", style = "padding-bottom: 0px",
+                          div(class = "heading-service marginbot-50",
                               div(class = "container",
-                                  div(class = "row",
+                                  div(class = "row", 
                                       div(class = "col-lg-8 col-lg-offset-2",
                                           div(class = "section-heading",
                                               h3("Trabajos"),
@@ -153,32 +153,26 @@ navbarPage(position = "fixed-top",
                                 div(class = "col-sm-12 col-md-12 col-lg-12",
                                     div(class = "row gallery-item",
                                         div(class = "col-md-4",
-                                            a(href = "img/jobs/01.jpg",
+                                            a(href = "img/jobs/Paredes_Quilumba-2017.jpg",
                                               title = "Salida de Campo geológica y muestreo en la provincia del Napo",
-                                              a(href = "img/jobs/01.pdf", target = "_blank", "Descargar documento"),
+                                              a(href = "img/jobs/Paredes_Quilumba-2017.pdf", target = "_blank", "Descargar documento"),
                                               `data-lightbox-gallery` = "gallery2",
                                               `data-lightbox-hidpi` = "img/jobs/1@2x.png",
-                                              img(src = "img/jobs/01.jpg",
+                                              img(src = "img/jobs/Paredes_Quilumba-2017.jpg",
                                                   class = "img-responsive",
                                                   alt = "img")
                                             )
-                                        )
-                                    )
-                                )
-                            )
-                        ),
-                        div(class = "container",
-                            div(class = "col",
-                                div(class = "col-sm-12 col-md-12 col-lg-12",
-                                    div(class = "col-md-4",
-                                        a(href = "img/jobs/02.png",
-                                          title = "Reconocimiento geológico al Noreste del Ecuador",
-                                          a(href = "img/jobs/01.pdf", target = "_blank", "Descargar documento"),
-                                          `data-lightbox-gallery` = "gallery2",
-                                          `data-lightbox-hidpi` = "img/jobs/1@2x.png",
-                                          img(src = "img/jobs/02.png",
-                                              class = "img-responsive",
-                                              alt = "img")
+                                        ),
+                                        div(class = "col-md-4",
+                                            a(href = "img/jobs/Cargua_Guaman-2018.png",
+                                              title = "Reconocimiento geológico al Noreste del Ecuador",
+                                              a(href = "img/jobs/Cargua_Guaman-2018.pdf", target = "_blank", "Descargar documento"),
+                                              `data-lightbox-gallery` = "gallery2",
+                                              `data-lightbox-hidpi` = "img/jobs/1@2x.png",
+                                              img(src = "img/jobs/Cargua_Guaman-2018.png",
+                                                  class = "img-responsive",
+                                                  alt = "img")
+                                            )
                                         )
                                     )
                                 )
@@ -210,7 +204,8 @@ navbarPage(position = "fixed-top",
                               div(class = "row",
                                   div(class = "col-sm-12 col-md-12 col-lg-12",
                                       div(class = "row gallery-item",
-                                          lapply(list.files("www/img/works", "jpg$"),
+                                          lapply(list.files("www/img/works", "jpg$",
+                                                            full.names = T),
                                                  photoGallery, path = "img/works", ncol = 6) %>%
                                             rowGallery(nc = 6)
                                           # div(class = "col-md-2",

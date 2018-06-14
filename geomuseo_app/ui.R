@@ -9,7 +9,9 @@ navbarPage(position = "fixed-top",
            inverse = T,
            header = tags$head(
              tags$meta(name="viewport", content="width=device-width, initial-scale=1.0"),
-             tags$meta(name="description", content=""),
+             tags$meta(name="description", content="Geomuseo enfocado en la amzonía ecuatoriana"),
+             tags$meta(name="keywords", content="Geomuseo, Universidad Ikiam, Geociencias, Ecuador,
+                       shiny, GeoMuseo"),
              tags$link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css"),
              tags$link(href="css/nivo-lightbox.css", rel="stylesheet"),
              tags$link(href="css/nivo-lightbox-theme/default/default.css", rel="stylesheet", type="text/css"),
@@ -194,7 +196,8 @@ navbarPage(position = "fixed-top",
                                   div(class = "row",
                                       div(class = "col-lg-8 col-lg-offset-2",
                                           div(class = "section-heading",
-                                              h3("Galería")#, p("Fotografía e imágenes que describan el proyecto...")
+                                              h3("Galería"),
+                                              p("Salidas de campo y muestreos realizados por la carrera de Geociencias")
                                           )
                                       )
                                   )
@@ -252,11 +255,11 @@ navbarPage(position = "fixed-top",
                                               div(class = "widget-contact row",
                                                   div(class = "row text-center",
                                                       div(class = "col-lg-6",
-                                                          tags$address(strong("Bruno Conicelli"),
+                                                          tags$address(strong("Bryan Valencia"),
                                                                        br(),
-                                                                       "bruno.conicelli@ikiam.edu.ec ",
+                                                                       "bryan.valencia@ikiam.edu.ec ",
                                                                        br(),
-                                                                       "Director de Ingeniería en Geociencias",
+                                                                       "Director de la carrera Ingeniería en Geociencias",
                                                                        br(), 
                                                                        "Campus Universitario Ikiam"
                                                           )
@@ -264,7 +267,7 @@ navbarPage(position = "fixed-top",
                                                       div(class = "col-lg-6",
                                                           tags$address(strong("Marco Simbaña"),
                                                                        br(),
-                                                                       "marcosimbana@ikiam.edu.ec",
+                                                                       "marco.simbana@ikiam.edu.ec",
                                                                        br(),
                                                                        "Profesor de Ingeniería en Geociencias",
                                                                        br(), 
@@ -272,16 +275,24 @@ navbarPage(position = "fixed-top",
                                                           )
                                                       )
                                                   ),
-                                                  div(class = "row text-center",
-                                                      tags$address(strong("Universidad Regional Amazónica Ikiam"),
+                                                  div(class = "col-lg-6",
+                                                      tags$address(strong("Stalin Guamán"),
                                                                    br(),
-                                                                   "Campus Universitario",
+                                                                   "stalin.guaman@ikiam.edu.ec",
                                                                    br(),
-                                                                   "Km 7 Vía a Muyuna",
-                                                                   tags$abbr(title = "Teléfono", "F:"),
-                                                                   " (+593) 63-700-040",
+                                                                   "Desarrollador de la página",
                                                                    br(),
-                                                                   "Tena, Napo - Ecuador"
+                                                                   "Campus Universitario"
+                                                      )
+                                                  ),
+                                                  div(class = "col-lg-6",
+                                                      tags$address(strong("Gabriel Gaona"),
+                                                                   br(),
+                                                                   "gabriel.gaona@ikiam.edu.ec",
+                                                                   br(),
+                                                                   "Desarrollador de la página",
+                                                                   br(),
+                                                                   "Campus Universitario"
                                                       )
                                                   )
                                               )

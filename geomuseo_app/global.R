@@ -9,7 +9,7 @@ library(googlesheets)
 library(lubridate)
 source("R/photoGallery.R")
 #Inputitng data and generating table for server
-gs_auth(token = "rds/MuestrasPetrografia_TK.rds") #%>% saveRDS(file = "rds/MuestrasPetrografia_TK.rds")
+#gs_auth(token = "rds/MuestrasPetrografia_TK.rds") #%>% saveRDS(file = "rds/MuestrasPetrografia_TK.rds")
 gap <- gs_title("MuestrasPetrografia")
 
 data <- gs_read(gap, 1) %>%

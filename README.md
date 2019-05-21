@@ -11,4 +11,4 @@ The principal packages used in the app is `shiny`, `leaflet`, `tidyverse`, `sp`,
 
 ## Vision
 
-Geomuseo app has been stoped by administrative problems, but as soon as posible it will hace some improvements and the integration of new packages, like `sf` or `tmap` and so on.
+Geomuseo app has been stoped by administrative problems, but as soon as posible it will have some improvements and the integration of new packages, like `sf` or `tmap` and so on.
